@@ -1,5 +1,5 @@
 {% set name = "tracerite" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tracerite-{{ version }}.tar.gz
-  sha256: 6400a35a187747189e4bb8d4a8e471bd86d14dbdcc94bcad23f4eda023f41356
+  sha256: e960cd145d032057cb5e2b8836e0ea2e0f5f8c6640046214f6b02d27673a2081
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
