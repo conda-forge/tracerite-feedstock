@@ -1,0 +1,45 @@
+schema_version: 1
+
+context:
+  name: tracerite
+  version: 2.1.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/tracerite-${{ version }}.tar.gz
+  sha256: 327ecff4aeb479f6bf97c23ded2dd2581f70505dc3f932d431afde03dba749d8
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - hatch-vcs
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - html5tagger >=1.2.1
+
+tests:
+  - python:
+      imports:
+        - tracerite
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Human-readable HTML tracebacks for Python exceptions
+  license: Unlicense
+  license_file: LICENSE
+  homepage: https://github.com/sanic-org/tracerite
+
+extra:
+  recipe-maintainers:
+    - thewchan
