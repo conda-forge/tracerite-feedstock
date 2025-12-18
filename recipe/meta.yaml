@@ -19,6 +19,7 @@ requirements:
     - python {{ python_min }}
     - hatchling
     - hatch-vcs
+    - pip
   run:
     - python >={{ python_min }}
     - html5tagger >=1.2.1
