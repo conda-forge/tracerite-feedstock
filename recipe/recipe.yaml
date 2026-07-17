@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: tracerite
-  version: "2.3.1"
+  version: "2.5.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/tracerite-${{ version }}.tar.gz
-  sha256: f46ee672d240d500a2331781b09eb33564d473f6ae60cd871ebce6c2413cffa8
+  sha256: 79641bd08214b99ea991699f58d311a731b330b41ff52f4bb7c2c8b57c28f120
 
 build:
   number: 0
